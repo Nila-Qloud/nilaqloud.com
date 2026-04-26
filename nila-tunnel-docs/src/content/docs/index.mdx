@@ -1,0 +1,56 @@
+---
+title: nila-tunnel
+description: Zero-config HTTPS for local development. Map local ports to clean .test domains with automatic, trusted SSL certificates.
+template: splash
+hero:
+  tagline: Map local ports to clean .test domains with automatic, trusted SSL certificates. 1.8 MB. Pure Rust. No dependencies.
+  actions:
+    - text: Quick Start
+      link: /getting-started/quickstart/
+      icon: right-arrow
+      variant: primary
+    - text: Releases
+      link: /reference/releases/
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Why nila-tunnel
+
+<CardGrid>
+  <Card title="Zero-config HTTPS" icon="approve-check">
+    Automatic trusted certificates per domain. No manual cert setup, no browser warnings.
+  </Card>
+  <Card title="AI-First" icon="rocket">
+    MCP server for Claude Code, Cursor, and Claude Desktop. Structured logging with API key masking.
+  </Card>
+  <Card title="Hot-Reload" icon="random">
+    Register and deregister services without restart. Changes take effect instantly.
+  </Card>
+  <Card title="1.8 MB Binary" icon="seti:rust">
+    Pure Rust. No C dependencies. No Docker. No Node.js. Single binary, runs anywhere.
+  </Card>
+</CardGrid>
+
+## Install
+
+```bash
+# macOS / Linux
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/b-rajesh/nila-releases/releases/latest/download/nila-tunnel-installer.sh | sh
+
+# Homebrew
+brew install b-rajesh/nila-tunnel/nila-tunnel
+
+# Windows
+powershell -ExecutionPolicy Bypass -c "irm https://github.com/b-rajesh/nila-releases/releases/latest/download/nila-tunnel-installer.ps1 | iex"
+```
+
+## 60-Second Demo
+
+```bash
+nila-tunnel install                          # one-time setup
+nila-tunnel register -d api.test -p 4000     # register a service
+nila-tunnel start                            # start proxy
+curl https://api.test:8443/health            # HTTPS just works
+```

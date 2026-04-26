@@ -1,0 +1,2 @@
+# Redirect www to apex
+https://www.nilaqloud.com/* https://nilaqloud.com/:splat 301
